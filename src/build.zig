@@ -20,7 +20,7 @@ pub fn addRaylib(b: *std.Build, target: anytype, optimize: std.builtin.OptimizeM
     var raylib_flags_arr = std.ArrayList([]const u8).init(std.heap.page_allocator);
     defer raylib_flags_arr.deinit();
     try raylib_flags_arr.appendSlice(&[_][]const u8{
-        "-std=gnu99",
+        "-std=gnu11",
         "-D_GNU_SOURCE",
         "-DGL_SILENCE_DEPRECATION=199309L",
         "-fno-sanitize=undefined", // https://github.com/raysan5/raylib/issues/3674
